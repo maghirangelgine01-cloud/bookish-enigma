@@ -1,0 +1,143 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+
+body {
+  background-color: #b30000; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+.login-box {
+  background-color: white; 
+  color: #b30000;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  width: 350px;
+  text-align: center;
+  animation: fadeIn 0.8s ease; 
+}
+
+
+.login-box h2 {
+  margin-bottom: 25px;
+  color: #b30000;
+  font-weight: 700;
+}
+
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #b30000;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #800000;
+  box-shadow: 0 0 6px rgba(179, 0, 0, 0.5);
+}
+
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #b30000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #800000;
+}
+
+
+p {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+p a {
+  color: #b30000;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+
+.error {
+  margin-top: 15px;
+  color: #b30000;
+  font-weight: 600;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+body {
+  background-color: #b30000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+.login-container {
+  display: flex;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  animation: fadeIn 0.8s ease;
+}
+
+
+.login-box {
+  color: #b30000;
+  padding: 40px;
+  width: 350px;
+  text-align: center;
+}
+
+
+.login-logo {
+  background-color: #b30000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.login-logo img {
+  width: 180px; 
+  height: auto;
+  border-radius: 10px;
+}

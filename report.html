@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="report.css">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reports | Admin</title>
+  
+</head>
+<body>
+  
+  <div class="sidebar">
+    <h2>Admin Panel</h2>
+    <a href="admin.php">Dashboard</a>
+    <a href="ranking.php">Rankings</a>
+    <a href="report.html" class="active">Reports</a>
+  </div>
+
+  
+  <div class="main-content">
+    <header>
+      <h1>Grade Reports</h1>
+      <button class="logout-btn">Logout</button>
+    </header>
+
+    
+    <div class="form-section">
+      <h2>Insert Student Scores</h2>
+      <form id="gradeForm">
+        <input type="text" id="studentName" name="studentName" placeholder="Student Name" required>
+        <input type="number" id="physics" name="physics" placeholder="Physics (0-100)" required>
+        <input type="number" id="chemistry" name="chemistry" placeholder="Chemistry (0-100)" required>
+        <input type="number" id="math" name="math" placeholder="Math (0-100)" required>
+        <button type="submit">Compute & Add</button>
+      </form>
+    </div>
+
+    
+    <h2 style="color:#c0392b;">Computed Grades</h2>
+    <table id="gradeTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Physics</th>
+          <th>Chemistry</th>
+          <th>Math</th>
+          <th>Total</th>
+          <th>Average</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  
+  <script>
+  const form = document.getElementById('gradeForm');
+  const tableBody = document.querySelector('#gradeTable tbody');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+
+    fetch('report.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+      alert(data);
+      loadGrades();
+      form.reset();
+    })
+    .catch(error => console.error('Error:', error));
+  });
+
+  function loadGrades() {
+    fetch('get_grades.php')
+      .then(response => response.json())
+      .then(grades => {
+        tableBody.innerHTML = '';
+        grades.forEach(row => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${row.student_name}</td>
+            <td>${row.physics}</td>
+            <td>${row.chemistry}</td>
+            <td>${row.math}</td>
+            <td>${row.total}</td>
+            <td>${row.average}</td>
+            <td>${row.grade}</td>
+          `;
+          tableBody.appendChild(tr);
+        });
+      });
+  }
+
+  loadGrades();
+  </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+ 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", Arial, sans-serif;
+    }
+
+    body {
+      background-color: #b30000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      color: #b30000;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      width: 750px;
+      gap: 30px;
+    }
+
+    .register-box {
+      width: 50%;
+    }
+
+    .register-box h2 {
+      margin-bottom: 25px;
+      color: #b30000;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 2px solid #b30000;
+      border-radius: 8px;
+      font-size: 14px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #800000;
+      box-shadow: 0 0 6px rgba(179, 0, 0, 0.5);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #b30000;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #800000;
+    }
+
+    p {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #333;
+      text-align: center;
+    }
+
+    p a {
+      color: #b30000;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    p a:hover {
+      text-decoration: underline;
+    }
+
+    .error {
+      margin-top: 15px;
+      color: #b30000;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .success {
+      margin-top: 15px;
+      color: green;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .logo {
+      width: 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 220px;
+      height: auto;
+    }
